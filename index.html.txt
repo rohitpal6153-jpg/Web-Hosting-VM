@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure VM Test Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef4fb;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .container {
+            background: white;
+            max-width: 600px;
+            margin: auto;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #ccd6e0;
+        }
+        h1 { color: #0078d4; }
+        .status { color: #16803c; font-weight: bold; }
+        button {
+            background: #0078d4;
+            color: white;
+            border: 0;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Azure!</h1>
+        <p>Your Ubuntu VM has been provisioned.</p>
+        <p class="status">Website is running successfully.</p>
+        <p id="time"></p>
+        <button onclick="showMessage()">Test Website</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        document.getElementById("time").textContent =
+            "Browser time: " + new Date().toLocaleString();
+
+        function showMessage() {
+            document.getElementById("message").textContent =
+                "Success! Apache is serving your website.";
+        }
+    </script>
+</body>
+</html>
